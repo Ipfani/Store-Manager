@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>Images/client.png</file>
+        <file>Images/Main.png</file>
+        <file>Images/boxes_3638933.png</file>
+        <file>Images/transaction.png</file>
+        <file>Images/xml.png</file>
+        <file>Images/AddCustomer.png</file>
+        <file>Images/gear.png</file>
+        <file>Images/technical-support.png</file>
+    </qresource>
+</RCC>
