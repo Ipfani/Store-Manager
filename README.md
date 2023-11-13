@@ -27,3 +27,92 @@
   
 * Challenges
   * Implementation of the Undo using the Memento Design Pattern
+
+
+**Sample Code**
+<br/>
+* SingleTon
+```
+#ifndef STOCKLIST_H
+#define STOCKLIST_H
+
+#include <QObject>
+#include "stock.h"
+#include "magazine.h"
+#include "books.h"
+#include <QList>
+#include <QAction>
+
+
+class StockList : public QObject
+{
+    Q_OBJECT
+public:
+
+    static StockList* getInstance();
+    void addStock(Stock *s);
+    QList<Stock *> getMagazineStock();
+    QList<Stock *> getBooksStock();
+    QString toString();
+    ~StockList();
+
+private:
+    explicit StockList(QObject *parent = nullptr);
+
+    static StockList* instance;
+    QList<Stock *> magazineList;
+    QList<Stock *> booksList;
+
+};
+
+#endif // STOCKLIST_H
+
+```
+
+* Factory Design Pattern
+```
+#ifndef STOCKFACTORY_H
+#define STOCKFACTORY_H
+
+#include "stock.h"
+
+class StockFactory
+{
+public:
+    StockFactory();
+    Stock* createStock(QString type, QString n);
+};
+
+#endif // STOCKFACTORY_H
+
+```
+
+* Broadcast XML
+```
+#ifndef BROADCASTTHREAD_H
+#define BROADCASTTHREAD_H
+
+#include <QObject>
+#include <QThread>
+#include <QUdpSocket>
+#include <QFile>
+#include <QMessageBox>
+
+class BroadcastThread : public QObject
+{
+    Q_OBJECT
+public:
+    explicit BroadcastThread(QObject *parent = nullptr);
+    ~BroadcastThread();
+
+private slots:
+    void broadcastXML();
+
+private:
+    //My socket
+    QUdpSocket *socket = nullptr;
+
+};
+
+#endif // BROADCASTTHREAD_H
+```
