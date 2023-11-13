@@ -6,6 +6,7 @@
 
 * Design Patterns
   * Singleton
+  * Factory
   * Composite
   * Agregate
 * Model and View
