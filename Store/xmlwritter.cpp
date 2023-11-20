@@ -20,7 +20,7 @@ void Xmlwritter::writeCustomers(QList<Customers*> customers)
     {
         xmlWriter.setAutoFormatting(true);
         xmlWriter.writeStartDocument();
-        xmlWriter.writeStartElement("$$$$$$$$$$$$$$$ Mutavhatsindi corner store $$$$$$$$$$$$$$$");
+        xmlWriter.writeStartElement("_______________ Mutavhatsindi corner store _______________");
 
         foreach (Customers *currentCustomer, customers)
         {
