@@ -16,6 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Network)
 #XML
 find_package(Qt6 REQUIRED COMPONENTS Xml)
+#Printer
+find_package(Qt6 REQUIRED COMPONENTS PrintSupport)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -35,6 +37,7 @@ set(PROJECT_SOURCES
         xmlwritter.cpp xmlwritter.h             #Write to xml before Broadcast
         about.cpp about.h                       #My about widget
         broadcastthread.cpp broadcastthread.h   #for my thread
+        pdfcreator.cpp  pdfcreator.h            #My class for pdf
 
 )
 
@@ -67,6 +70,8 @@ target_link_libraries(Store PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Store PRIVATE Qt6::Network)
 #XML
 target_link_libraries(Store PRIVATE Qt6::Xml)
+#pdf
+target_link_libraries(Store PRIVATE Qt6::PrintSupport)
 
 set_target_properties(Store PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
